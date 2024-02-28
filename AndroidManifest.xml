@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" android:sharedUserId="android.uid.qtiphone" android:singleUser="true" coreApp="true" package="com.qti.phone" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-sdk android:targetSdkVersion="33"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
