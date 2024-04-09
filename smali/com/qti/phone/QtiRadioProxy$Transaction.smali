@@ -28,18 +28,18 @@
 .method public constructor <init>(Lcom/qti/phone/QtiRadioProxy;Lcom/qti/extphone/Token;Ljava/lang/String;Lcom/qti/extphone/Client;)V
     .locals 0
 
-    .line 610
+    .line 615
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy$Transaction;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 611
+    .line 616
     iput-object p2, p0, Lcom/qti/phone/QtiRadioProxy$Transaction;->mToken:Lcom/qti/extphone/Token;
 
-    .line 612
+    .line 617
     iput-object p3, p0, Lcom/qti/phone/QtiRadioProxy$Transaction;->mName:Ljava/lang/String;
 
-    .line 613
+    .line 618
     iput-object p4, p0, Lcom/qti/phone/QtiRadioProxy$Transaction;->mClient:Lcom/qti/extphone/Client;
 
     return-void
@@ -50,7 +50,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 618
+    .line 623
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

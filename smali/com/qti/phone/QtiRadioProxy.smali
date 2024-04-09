@@ -705,11 +705,11 @@
 
     sput-object v0, Lcom/qti/phone/QtiRadioProxy;->mDelayDTAGMccMncList:Ljava/util/ArrayList;
 
-    const/16 v0, 0x2e
+    const/16 v0, 0x44
 
     new-array v0, v0, [I
 
-    .line 185
+    .line 186
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/qti/phone/QtiRadioProxy;->ExceptionMCCMNC:[I
@@ -718,7 +718,7 @@
 
     new-array v0, v0, [I
 
-    .line 198
+    .line 203
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/qti/phone/QtiRadioProxy;->DTAG_MCCMNC:[I
@@ -775,6 +775,28 @@
         0x5141
         0x5142
         0xc96e
+        0xabe7
+        0xabe8
+        0xac12
+        0xac13
+        0xac14
+        0xac15
+        0xac16
+        0xac17
+        0xac18
+        0xac26
+        0xac27
+        0xac28
+        0xac29
+        0xac2a
+        0xac2b
+        0xac2c
+        0xac2d
+        0xac2e
+        0xac2f
+        0xac38
+        0xac39
+        0xac8a
     .end array-data
 
     :array_1
@@ -804,7 +826,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 944
+    .line 949
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
@@ -925,45 +947,45 @@
 
     iput-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedBearerAllocResult:Ljava/util/HashMap;
 
-    .line 627
+    .line 632
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$1;
 
     invoke-direct {v0, p0}, Lcom/qti/phone/QtiRadioProxy$1;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
 
     iput-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadioCallback:Lcom/qti/phone/IQtiRadioConnectionCallback;
 
-    .line 1064
+    .line 1069
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$2;
 
     invoke-direct {v0, p0}, Lcom/qti/phone/QtiRadioProxy$2;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
 
     iput-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1488
+    .line 1493
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$3;
 
     invoke-direct {v0, p0}, Lcom/qti/phone/QtiRadioProxy$3;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
 
     iput-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDeathRecipient:Landroid/os/IHwBinder$DeathRecipient;
 
-    .line 1504
+    .line 1509
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$4;
 
     invoke-direct {v0, p0}, Lcom/qti/phone/QtiRadioProxy$4;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
 
     iput-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mAidlDeathRecipient:Landroid/os/IBinder$DeathRecipient;
 
-    .line 945
+    .line 950
     sput-object p1, Lcom/qti/phone/QtiRadioProxy;->mContext:Landroid/content/Context;
 
-    .line 946
+    .line 951
     invoke-static {p1}, Lcom/qti/phone/QtiRadioFactory;->makeQtiRadio(Landroid/content/Context;)[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
-    .line 947
+    .line 952
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -986,12 +1008,12 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 948
+    .line 953
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {p1}, Landroid/os/HandlerThread;->start()V
 
-    .line 949
+    .line 954
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -1000,7 +1022,7 @@
 
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->setLooper(Landroid/os/Looper;)V
 
-    .line 950
+    .line 955
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->isBoardApiLevelMatched()Z
 
     move-result p1
@@ -1015,13 +1037,13 @@
 
     const-string p1, "QtiRadioProxy() isCneAidlAvailable: init AIDL ... "
 
-    .line 951
+    .line 956
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 952
+    .line 957
     iput-boolean v1, p0, Lcom/qti/phone/QtiRadioProxy;->mIsFactoryAidlAvailable:Z
 
-    .line 953
+    .line 958
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->initIFactoryAidl()V
 
     goto :goto_0
@@ -1029,13 +1051,13 @@
     :cond_0
     const-string p1, "QtiRadioProxy() init HIDL ... "
 
-    .line 955
+    .line 960
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 956
+    .line 961
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->initIFactoryHidl()V
 
-    .line 959
+    .line 964
     :goto_0
     invoke-virtual {p0}, Lcom/qti/phone/QtiRadioProxy;->initDelayNotifyParams()V
 
@@ -1045,10 +1067,10 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/qti/phone/ExtTelephonyServiceImpl;)V
     .locals 0
 
-    .line 934
+    .line 939
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;-><init>(Landroid/content/Context;)V
 
-    .line 935
+    .line 940
     invoke-virtual {p0, p2}, Lcom/qti/phone/QtiRadioProxy;->init(Lcom/qti/phone/ExtTelephonyServiceImpl;)V
 
     return-void
@@ -1057,7 +1079,7 @@
 .method private callDynamicDdsSwitchOnDemand()V
     .locals 5
 
-    .line 1530
+    .line 1535
     sget-object v0, Lcom/qti/phone/QtiRadioProxy;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1072,7 +1094,7 @@
 
     move-result v0
 
-    .line 1532
+    .line 1537
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1091,19 +1113,19 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1533
+    .line 1538
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v1
 
-    .line 1534
+    .line 1539
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     new-instance v3, Lcom/qti/phone/QtiRadioProxy$Result;
 
     const/4 v4, 0x0
 
-    .line 1535
+    .line 1540
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -1112,7 +1134,7 @@
 
     const/16 p0, 0x11
 
-    .line 1534
+    .line 1539
     invoke-virtual {v2, p0, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -1125,7 +1147,7 @@
 .method private createAidlDynamicSubscriptionManager()Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
     .locals 5
 
-    .line 1615
+    .line 1620
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mFactory:Lvendor/qti/data/factoryservice/IFactory;
 
     const/4 v1, 0x0
@@ -1136,7 +1158,7 @@
 
     const-string p0, "IFactory getService returned null"
 
-    .line 1616
+    .line 1621
     invoke-static {v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-object v1
@@ -1145,40 +1167,40 @@
     :try_start_0
     const-string v0, "Call createAidlDynamicSubscriptionManager"
 
-    .line 1620
+    .line 1625
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1621
+    .line 1626
     new-instance v0, Lvendor/qti/data/factoryservice/Result;
 
     invoke-direct {v0}, Lvendor/qti/data/factoryservice/Result;-><init>()V
 
-    .line 1624
+    .line 1629
     new-instance v3, Lcom/qti/phone/QtiRadioProxy$AidlToken;
 
     invoke-direct {v3, p0}, Lcom/qti/phone/QtiRadioProxy$AidlToken;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
 
-    .line 1625
+    .line 1630
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mFactory:Lvendor/qti/data/factoryservice/IFactory;
 
     invoke-interface {v4, v3, v0}, Lvendor/qti/data/factoryservice/IFactory;->createDynamicddsISubscriptionManager(Lvendor/qti/hardware/data/dynamicddsaidlservice/IToken;Lvendor/qti/data/factoryservice/Result;)Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
     move-result-object v3
 
-    .line 1626
+    .line 1631
     iget v4, v0, Lvendor/qti/data/factoryservice/Result;->status:I
 
     if-nez v4, :cond_1
 
     const-string v0, "createAidlDynamicSubscriptionManager success"
 
-    .line 1627
+    .line 1632
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1628
+    .line 1633
     sput-object v3, Lcom/qti/phone/QtiRadioProxy;->sAidlDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
-    .line 1629
+    .line 1634
     invoke-interface {v3}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -1189,12 +1211,12 @@
 
     invoke-interface {v0, p0, v3}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 1630
+    .line 1635
     sget-object p0, Lcom/qti/phone/QtiRadioProxy;->sAidlDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
     return-object p0
 
-    .line 1632
+    .line 1637
     :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -1223,7 +1245,7 @@
 
     const-string v0, "createDynamicddsISubscriptionManager exception"
 
-    .line 1636
+    .line 1641
     invoke-static {v2, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_0
@@ -1233,7 +1255,7 @@
 .method private delayNotifyBearerAllocation(ILcom/qti/phone/QtiRadioProxy$Result;)Z
     .locals 10
 
-    .line 1706
+    .line 1711
     iget-object v0, p2, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
 
     check-cast v0, Lcom/qti/extphone/BearerAllocationStatus;
@@ -1242,7 +1264,7 @@
 
     move-result v0
 
-    .line 1707
+    .line 1712
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v1
@@ -1255,12 +1277,12 @@
 
     const-string p0, "Invalid Slot"
 
-    .line 1708
+    .line 1713
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1711
+    .line 1716
     :cond_0
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedBearerAllocResult:Ljava/util/HashMap;
 
@@ -1276,7 +1298,7 @@
 
     check-cast v1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 1712
+    .line 1717
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1305,12 +1327,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1714
+    .line 1719
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
     move-result v4
 
-    .line 1715
+    .line 1720
     invoke-static {v4}, Landroid/telephony/SubscriptionManager;->getSlotIndex(I)I
 
     move-result v4
@@ -1319,7 +1341,7 @@
 
     const-string p0, "delayNotifyBearerAllocation, nonDDS slot event, no delay report"
 
-    .line 1717
+    .line 1722
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
@@ -1334,13 +1356,13 @@
     :cond_2
     const-string v4, "ril.mcc.mnc1"
 
-    .line 1722
+    .line 1727
     :goto_0
     invoke-static {v4, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v4
 
-    .line 1723
+    .line 1728
     sget-object v5, Lcom/qti/phone/QtiRadioProxy;->mDelayExceptionMccMncList:Ljava/util/ArrayList;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1353,7 +1375,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 1724
+    .line 1729
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1383,7 +1405,7 @@
 
     goto/16 :goto_3
 
-    .line 1735
+    .line 1740
     :cond_4
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
 
@@ -1409,7 +1431,7 @@
 
     iget-object v6, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
 
-    .line 1736
+    .line 1741
     invoke-virtual {v6, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1432,12 +1454,12 @@
 
     const-string p0, "delayNotifyBearerAllocation, delay is already onging, ignore this bearer_alloc update"
 
-    .line 1737
+    .line 1742
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v5
 
-    .line 1741
+    .line 1746
     :cond_5
     iget-object v0, v1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
 
@@ -1445,12 +1467,12 @@
 
     const-string p0, "delayNotifyBearerAllocation, bearer_alloc not updated ever before, no delay report"
 
-    .line 1742
+    .line 1747
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1747
+    .line 1752
     :cond_6
     check-cast v0, Lcom/qti/extphone/BearerAllocationStatus;
 
@@ -1466,7 +1488,7 @@
 
     goto :goto_2
 
-    .line 1755
+    .line 1760
     :cond_7
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
 
@@ -1482,7 +1504,7 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1756
+    .line 1761
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAllocMs:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -1503,7 +1525,7 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1757
+    .line 1762
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedBearerAllocResult:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -1516,14 +1538,14 @@
 
     invoke-virtual {v0, v2, p2}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1758
+    .line 1763
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     const/16 v2, 0x26
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1760
+    .line 1765
     sget-object v0, Lcom/qti/phone/QtiRadioProxy;->mDelayDTAGMccMncList:Ljava/util/ArrayList;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1536,43 +1558,43 @@
 
     if-eqz v0, :cond_8
 
-    .line 1761
+    .line 1766
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
-    .line 1762
+    .line 1767
     invoke-virtual {p0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
     const-wide/16 v0, 0x2710
 
-    .line 1761
+    .line 1766
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     const-string p0, "delayNotifyBearerAllocation,  updated is bearer_alloc, new is bearer no alloc, delay report for 10000"
 
-    .line 1763
+    .line 1768
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
-    .line 1767
+    .line 1772
     :cond_8
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
-    .line 1768
+    .line 1773
     invoke-virtual {p0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
     const-wide/16 v0, 0x1388
 
-    .line 1767
+    .line 1772
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     const-string p0, "delayNotifyBearerAllocation,  updated is bearer_alloc, new is bearer no alloc, delay report for 5000"
 
-    .line 1769
+    .line 1774
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
@@ -1582,12 +1604,12 @@
     :goto_2
     const-string p0, "delayNotifyBearerAllocation, updated bearer_status is not bearer_allocated, no delay report"
 
-    .line 1750
+    .line 1755
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1730
+    .line 1735
     :cond_a
     :goto_3
     new-instance p0, Ljava/lang/StringBuilder;
@@ -1616,7 +1638,7 @@
 .method private delayNotifyNrIcon(ILcom/qti/phone/QtiRadioProxy$Result;)Z
     .locals 10
 
-    .line 1778
+    .line 1783
     iget-object v0, p2, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
 
     check-cast v0, Lcom/qti/extphone/NrIconType;
@@ -1625,7 +1647,7 @@
 
     move-result v0
 
-    .line 1779
+    .line 1784
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v1
@@ -1638,12 +1660,12 @@
 
     const-string p0, "Invalid Slot"
 
-    .line 1780
+    .line 1785
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1783
+    .line 1788
     :cond_0
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
 
@@ -1659,7 +1681,7 @@
 
     check-cast v1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 1784
+    .line 1789
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1688,12 +1710,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1786
+    .line 1791
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
     move-result v4
 
-    .line 1787
+    .line 1792
     invoke-static {v4}, Landroid/telephony/SubscriptionManager;->getSlotIndex(I)I
 
     move-result v4
@@ -1702,7 +1724,7 @@
 
     const-string p0, "delayNotifyNrIcon, nonDDS slot event, no delay report"
 
-    .line 1789
+    .line 1794
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
@@ -1717,13 +1739,13 @@
     :cond_2
     const-string v4, "ril.mcc.mnc1"
 
-    .line 1794
+    .line 1799
     :goto_0
     invoke-static {v4, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v4
 
-    .line 1795
+    .line 1800
     sget-object v5, Lcom/qti/phone/QtiRadioProxy;->mDelayExceptionMccMncList:Ljava/util/ArrayList;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1736,7 +1758,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 1796
+    .line 1801
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1766,7 +1788,7 @@
 
     goto/16 :goto_3
 
-    .line 1807
+    .line 1812
     :cond_4
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIcon:Ljava/util/HashMap;
 
@@ -1792,7 +1814,7 @@
 
     iget-object v6, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
 
-    .line 1808
+    .line 1813
     invoke-virtual {v6, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1815,12 +1837,12 @@
 
     const-string p0, "delayNotifyNrIcon, delay is already onging, ignore this icon update"
 
-    .line 1809
+    .line 1814
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v5
 
-    .line 1813
+    .line 1818
     :cond_5
     iget-object v0, v1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
 
@@ -1828,12 +1850,12 @@
 
     const-string p0, "delayNotifyNrIcon, icon not updated ever before, no delay report"
 
-    .line 1814
+    .line 1819
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1819
+    .line 1824
     :cond_6
     check-cast v0, Lcom/qti/extphone/NrIconType;
 
@@ -1849,7 +1871,7 @@
 
     goto :goto_2
 
-    .line 1827
+    .line 1832
     :cond_7
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIcon:Ljava/util/HashMap;
 
@@ -1865,7 +1887,7 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1828
+    .line 1833
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIconMs:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -1886,7 +1908,7 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1829
+    .line 1834
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -1899,14 +1921,14 @@
 
     invoke-virtual {v0, v2, p2}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1830
+    .line 1835
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     const/16 v2, 0x27
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1832
+    .line 1837
     sget-object v0, Lcom/qti/phone/QtiRadioProxy;->mDelayDTAGMccMncList:Ljava/util/ArrayList;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1919,43 +1941,43 @@
 
     if-eqz v0, :cond_8
 
-    .line 1833
+    .line 1838
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
-    .line 1834
+    .line 1839
     invoke-virtual {p0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
     const-wide/16 v0, 0x2710
 
-    .line 1833
+    .line 1838
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     const-string p0, "delayNotifyNrIcon,  updated is 5G icon, new is 4G icon, delay report for 10000"
 
-    .line 1835
+    .line 1840
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
-    .line 1839
+    .line 1844
     :cond_8
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
-    .line 1840
+    .line 1845
     invoke-virtual {p0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
     const-wide/16 v0, 0x1388
 
-    .line 1839
+    .line 1844
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     const-string p0, "delayNotifyNrIcon,  updated is 5G icon, new is 4G icon, delay report for 5000"
 
-    .line 1841
+    .line 1846
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
@@ -1965,12 +1987,12 @@
     :goto_2
     const-string p0, "delayNotifyNrIcon, updated icon is not 5G icon, no delay report"
 
-    .line 1822
+    .line 1827
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v2
 
-    .line 1802
+    .line 1807
     :cond_a
     :goto_3
     new-instance p0, Ljava/lang/StringBuilder;
@@ -1999,7 +2021,7 @@
 .method private dumpInflightRequests(Ljava/io/PrintWriter;)V
     .locals 4
 
-    .line 2481
+    .line 2486
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
@@ -2023,7 +2045,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 2482
+    .line 2487
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2063,7 +2085,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1580
+    .line 1585
     new-instance v1, Lcom/qti/phone/QtiRadioProxy$CbResults;
 
     const/4 v2, 0x0
@@ -2073,10 +2095,10 @@
     :try_start_0
     const-string v3, "Call IFactory getService"
 
-    .line 1584
+    .line 1589
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1585
+    .line 1590
     invoke-static {}, Lvendor/qti/data/factory/V2_4/IFactory;->getService()Lvendor/qti/data/factory/V2_4/IFactory;
 
     move-result-object v3
@@ -2091,7 +2113,7 @@
 
     const-string v4, "CnE factory not supported"
 
-    .line 1587
+    .line 1592
     invoke-static {v0, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-object v3, v2
@@ -2101,7 +2123,7 @@
 
     const-string p0, "CnE IFactory getService returned null"
 
-    .line 1590
+    .line 1595
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-object v2
@@ -2110,10 +2132,10 @@
     :try_start_1
     const-string v4, "Call createDynamicddsISubscriptionManager"
 
-    .line 1595
+    .line 1600
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1596
+    .line 1601
     new-instance v4, Lcom/qti/phone/QtiRadioProxy$5;
 
     invoke-direct {v4, p0}, Lcom/qti/phone/QtiRadioProxy$5;-><init>(Lcom/qti/phone/QtiRadioProxy;)V
@@ -2126,10 +2148,10 @@
 
     const-string v3, "createDynamicddsISubscriptionManager success"
 
-    .line 1601
+    .line 1606
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1602
+    .line 1607
     iget-object v3, v1, Lcom/qti/phone/QtiRadioProxy$CbResults;->service:Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mDeathRecipient:Landroid/os/IHwBinder$DeathRecipient;
@@ -2144,10 +2166,10 @@
 
     const-string p0, "Failed to link to death recipient"
 
-    .line 1603
+    .line 1608
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1605
+    .line 1610
     :cond_1
     iget-object p0, v1, Lcom/qti/phone/QtiRadioProxy$CbResults;->service:Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
     :try_end_1
@@ -2160,7 +2182,7 @@
 
     const-string v1, "createDynamicddsISubscriptionManager exception"
 
-    .line 1607
+    .line 1612
     invoke-static {v0, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     return-object v2
@@ -2171,7 +2193,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2119
+    .line 2124
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -2179,7 +2201,7 @@
 
     const/4 v2, 0x2
 
-    .line 2120
+    .line 2125
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -2201,7 +2223,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2122
+    .line 2127
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2212,7 +2234,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2123
+    .line 2128
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2227,13 +2249,13 @@
 
     move-result-object v4
 
-    .line 2122
+    .line 2127
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2124
+    .line 2129
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->getNetworkSelectionModeResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/NetworkSelectionMode;)V
 
-    .line 2125
+    .line 2130
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2249,7 +2271,7 @@
     :catch_0
     move-exception p0
 
-    .line 2128
+    .line 2133
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2273,7 +2295,7 @@
 .method static getNextToken()Lcom/qti/extphone/Token;
     .locals 2
 
-    .line 624
+    .line 629
     new-instance v0, Lcom/qti/extphone/Token;
 
     sget v1, Lcom/qti/phone/QtiRadioProxy;->mSerial:I
@@ -2292,14 +2314,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2368
+    .line 2373
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result v1
 
     const/4 v2, 0x3
 
-    .line 2370
+    .line 2375
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -2322,7 +2344,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2372
+    .line 2377
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2333,7 +2355,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2374
+    .line 2379
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2348,10 +2370,10 @@
 
     move-result-object v4
 
-    .line 2372
+    .line 2377
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2375
+    .line 2380
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->getQosParametersResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/QosParametersResult;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2363,10 +2385,10 @@
 
     const-string p2, "getQosParametersResponse: caught remote exception"
 
-    .line 2378
+    .line 2383
     invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2380
+    .line 2385
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -2384,7 +2406,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2025
+    .line 2030
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -2392,7 +2414,7 @@
 
     const/4 v2, 0x4
 
-    .line 2026
+    .line 2031
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -2414,7 +2436,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2028
+    .line 2033
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2425,7 +2447,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2029
+    .line 2034
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2440,13 +2462,13 @@
 
     move-result-object v4
 
-    .line 2028
+    .line 2033
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2030
+    .line 2035
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->getQtiRadioCapabilityResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;I)V
 
-    .line 2031
+    .line 2036
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2462,7 +2484,7 @@
     :catch_0
     move-exception p0
 
-    .line 2034
+    .line 2039
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2488,7 +2510,7 @@
 
     const-string v0, "vendor.qti.data.factoryservice.IFactory/default"
 
-    .line 975
+    .line 980
     invoke-static {v0}, Landroid/os/ServiceManager;->waitForService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -2499,12 +2521,12 @@
 
     const-string p0, "initIFactoryAidl failed"
 
-    .line 977
+    .line 982
     invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    .line 980
+    .line 985
     :cond_0
     invoke-static {v0}, Lvendor/qti/data/factoryservice/IFactory$Stub;->asInterface(Landroid/os/IBinder;)Lvendor/qti/data/factoryservice/IFactory;
 
@@ -2516,7 +2538,7 @@
 
     const-string p0, "Get binder for IFactory StableAIDL failed"
 
-    .line 982
+    .line 987
     invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
@@ -2524,12 +2546,12 @@
     :cond_1
     const-string v0, "Connected to IFactory StableAIDL service ... "
 
-    .line 984
+    .line 989
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x1
 
-    .line 985
+    .line 990
     iput-boolean v0, p0, Lcom/qti/phone/QtiRadioProxy;->mCneDataFactoryAvailable:Z
 
     :goto_0
@@ -2543,7 +2565,7 @@
 
     const-string v1, "QtiRadioProxy"
 
-    .line 965
+    .line 970
     :try_start_0
     invoke-static {}, Landroid/hidl/manager/V1_0/IServiceManager;->getService()Landroid/hidl/manager/V1_0/IServiceManager;
 
@@ -2561,7 +2583,7 @@
 
     if-nez p0, :cond_0
 
-    .line 967
+    .line 972
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2571,7 +2593,7 @@
     :catch_0
     move-exception p0
 
-    .line 970
+    .line 975
     invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -2586,19 +2608,19 @@
 
     const/4 v0, 0x0
 
-    .line 2452
+    .line 2457
     invoke-static {p0, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result p0
 
     const-string v1, "ro.product.first_api_level"
 
-    .line 2453
+    .line 2458
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 2454
+    .line 2459
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2640,7 +2662,7 @@
     :goto_0
     const-string p0, "isBoardApiLevelMatched: true..."
 
-    .line 2458
+    .line 2463
     invoke-static {v3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 p0, 0x1
@@ -2654,7 +2676,7 @@
     :try_start_0
     const-string v0, "vendor.qti.data.factoryservice.IFactory/default"
 
-    .line 2444
+    .line 2449
     invoke-static {v0}, Landroid/os/ServiceManager;->isDeclared(Ljava/lang/String;)Z
 
     move-result v0
@@ -2666,7 +2688,7 @@
     :catch_0
     move-exception v0
 
-    .line 2446
+    .line 2451
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2695,7 +2717,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 1676
+    .line 1681
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     array-length v0, v0
@@ -2706,7 +2728,7 @@
 
     return p0
 
-    .line 1679
+    .line 1684
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2748,10 +2770,10 @@
 .method private static synthetic lambda$getDynamicSubscriptionManager$1(Lcom/qti/phone/QtiRadioProxy$CbResults;ILvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;)V
     .locals 0
 
-    .line 1598
+    .line 1603
     iput p1, p0, Lcom/qti/phone/QtiRadioProxy$CbResults;->status:I
 
-    .line 1599
+    .line 1604
     iput-object p2, p0, Lcom/qti/phone/QtiRadioProxy$CbResults;->service:Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
     return-void
@@ -2760,7 +2782,7 @@
 .method private synthetic lambda$init$0(I)V
     .locals 0
 
-    .line 1018
+    .line 1023
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->registerCallback(I)V
 
     return-void
@@ -2775,7 +2797,7 @@
 
     const/4 v2, 0x6
 
-    .line 2134
+    .line 2139
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -2800,7 +2822,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2136
+    .line 2141
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2817,7 +2839,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2137
+    .line 2142
     iget v5, p3, Lcom/android/internal/telephony/NetworkScanResult;->scanStatus:I
 
     iget v6, p3, Lcom/android/internal/telephony/NetworkScanResult;->scanError:I
@@ -2837,7 +2859,7 @@
     :catch_0
     move-exception p0
 
-    .line 2141
+    .line 2146
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2863,7 +2885,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1993
+    .line 1998
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -2871,7 +2893,7 @@
 
     const/4 v2, 0x7
 
-    .line 1994
+    .line 1999
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -2893,7 +2915,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1996
+    .line 2001
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2904,7 +2926,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1997
+    .line 2002
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -2919,13 +2941,13 @@
 
     move-result-object v4
 
-    .line 1996
+    .line 2001
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1998
+    .line 2003
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->on5gConfigInfo(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/NrConfigType;)V
 
-    .line 1999
+    .line 2004
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2941,7 +2963,7 @@
     :catch_0
     move-exception p0
 
-    .line 2002
+    .line 2007
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2967,7 +2989,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1929
+    .line 1934
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -2975,7 +2997,7 @@
 
     const/16 v2, 0x8
 
-    .line 1930
+    .line 1935
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -2997,7 +3019,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1932
+    .line 1937
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3008,7 +3030,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1933
+    .line 1938
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3023,13 +3045,13 @@
 
     move-result-object v4
 
-    .line 1932
+    .line 1937
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1934
+    .line 1939
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->on5gStatus(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Z)V
 
-    .line 1935
+    .line 1940
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3045,7 +3067,7 @@
     :catch_0
     move-exception p0
 
-    .line 1938
+    .line 1943
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3071,7 +3093,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1945
+    .line 1950
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -3079,7 +3101,7 @@
 
     const/16 v2, 0x9
 
-    .line 1946
+    .line 1951
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -3101,7 +3123,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1948
+    .line 1953
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3112,7 +3134,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1949
+    .line 1954
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3127,13 +3149,13 @@
 
     move-result-object v4
 
-    .line 1948
+    .line 1953
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1950
+    .line 1955
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onAnyNrBearerAllocation(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/BearerAllocationStatus;)V
 
-    .line 1951
+    .line 1956
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3149,7 +3171,7 @@
     :catch_0
     move-exception p0
 
-    .line 1954
+    .line 1959
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3175,14 +3197,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2326
+    .line 2331
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result p2
 
     const/16 v1, 0xa
 
-    .line 2328
+    .line 2333
     :try_start_0
     invoke-virtual {p0, p2, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -3205,7 +3227,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2330
+    .line 2335
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3216,7 +3238,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2332
+    .line 2337
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -3231,10 +3253,10 @@
 
     move-result-object v3
 
-    .line 2330
+    .line 2335
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2333
+    .line 2338
     invoke-interface {v2, p1, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onDataDeactivateDelayTime(IJ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3244,7 +3266,7 @@
     :catch_0
     move-exception p1
 
-    .line 2336
+    .line 2341
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3261,7 +3283,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2338
+    .line 2343
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -3279,14 +3301,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2278
+    .line 2283
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result v1
 
     const/16 v2, 0xb
 
-    .line 2280
+    .line 2285
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -3309,7 +3331,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2282
+    .line 2287
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3320,7 +3342,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2284
+    .line 2289
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3335,10 +3357,10 @@
 
     move-result-object v4
 
-    .line 2282
+    .line 2287
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2285
+    .line 2290
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onDdsSwitchCapabilityChange(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3348,7 +3370,7 @@
     :catch_0
     move-exception p1
 
-    .line 2288
+    .line 2293
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3365,7 +3387,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2290
+    .line 2295
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -3383,14 +3405,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2294
+    .line 2299
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result p2
 
     const/16 v1, 0xc
 
-    .line 2296
+    .line 2301
     :try_start_0
     invoke-virtual {p0, p2, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -3413,7 +3435,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2298
+    .line 2303
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3424,7 +3446,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2300
+    .line 2305
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -3439,10 +3461,10 @@
 
     move-result-object v3
 
-    .line 2298
+    .line 2303
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2301
+    .line 2306
     invoke-interface {v2, p1, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onDdsSwitchCriteriaChange(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3452,7 +3474,7 @@
     :catch_0
     move-exception p1
 
-    .line 2304
+    .line 2309
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3469,7 +3491,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2306
+    .line 2311
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -3487,14 +3509,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2310
+    .line 2315
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result p2
 
     const/16 v1, 0xd
 
-    .line 2312
+    .line 2317
     :try_start_0
     invoke-virtual {p0, p2, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -3517,7 +3539,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2314
+    .line 2319
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3528,7 +3550,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2316
+    .line 2321
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -3543,10 +3565,10 @@
 
     move-result-object v3
 
-    .line 2314
+    .line 2319
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2317
+    .line 2322
     invoke-interface {v2, p1, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onDdsSwitchRecommendation(II)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3556,7 +3578,7 @@
     :catch_0
     move-exception p1
 
-    .line 2320
+    .line 2325
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3573,7 +3595,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2322
+    .line 2327
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -3591,7 +3613,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1869
+    .line 1874
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -3599,7 +3621,7 @@
 
     const/16 v2, 0xe
 
-    .line 1870
+    .line 1875
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -3621,7 +3643,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1872
+    .line 1877
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3632,7 +3654,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1873
+    .line 1878
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3647,13 +3669,13 @@
 
     move-result-object v4
 
-    .line 1872
+    .line 1877
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1874
+    .line 1879
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onEnableEndc(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;)V
 
-    .line 1875
+    .line 1880
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3669,7 +3691,7 @@
     :catch_0
     move-exception p0
 
-    .line 1878
+    .line 1883
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3695,7 +3717,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1884
+    .line 1889
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -3703,7 +3725,7 @@
 
     const/16 v2, 0xf
 
-    .line 1885
+    .line 1890
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -3725,7 +3747,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1887
+    .line 1892
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3736,7 +3758,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1888
+    .line 1893
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3751,13 +3773,13 @@
 
     move-result-object v4
 
-    .line 1887
+    .line 1892
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1889
+    .line 1894
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onEndcStatus(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Z)V
 
-    .line 1890
+    .line 1895
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3773,7 +3795,7 @@
     :catch_0
     move-exception p0
 
-    .line 1893
+    .line 1898
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3799,14 +3821,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2342
+    .line 2347
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result p2
 
     const/16 v1, 0x10
 
-    .line 2344
+    .line 2349
     :try_start_0
     invoke-virtual {p0, p2, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -3829,7 +3851,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2346
+    .line 2351
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3840,7 +3862,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2348
+    .line 2353
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -3855,10 +3877,10 @@
 
     move-result-object v3
 
-    .line 2346
+    .line 2351
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2349
+    .line 2354
     invoke-interface {v2, p1, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onEpdgOverCellularDataSupported(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3868,7 +3890,7 @@
     :catch_0
     move-exception p1
 
-    .line 2352
+    .line 2357
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3885,7 +3907,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2354
+    .line 2359
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -3903,7 +3925,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1961
+    .line 1966
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -3911,7 +3933,7 @@
 
     const/16 v2, 0x13
 
-    .line 1962
+    .line 1967
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -3933,7 +3955,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1964
+    .line 1969
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3944,7 +3966,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1965
+    .line 1970
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -3959,13 +3981,13 @@
 
     move-result-object v4
 
-    .line 1964
+    .line 1969
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1966
+    .line 1971
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onNrDcParam(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/DcParam;)V
 
-    .line 1967
+    .line 1972
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3981,7 +4003,7 @@
     :catch_0
     move-exception p0
 
-    .line 1970
+    .line 1975
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4007,7 +4029,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1854
+    .line 1859
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -4015,7 +4037,7 @@
 
     const/16 v2, 0x14
 
-    .line 1855
+    .line 1860
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -4037,7 +4059,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1857
+    .line 1862
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4048,7 +4070,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1858
+    .line 1863
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4063,13 +4085,13 @@
 
     move-result-object v4
 
-    .line 1857
+    .line 1862
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1859
+    .line 1864
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onNrIconType(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/NrIconType;)V
 
-    .line 1860
+    .line 1865
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4085,7 +4107,7 @@
     :catch_0
     move-exception p0
 
-    .line 1863
+    .line 1868
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4109,7 +4131,7 @@
 .method private onQosParametersChanged(IILcom/qti/extphone/QosParametersResult;)V
     .locals 3
 
-    .line 2384
+    .line 2389
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4144,7 +4166,7 @@
 
     const/16 v2, 0x15
 
-    .line 2388
+    .line 2393
     :try_start_0
     invoke-virtual {p0, v0, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -4167,7 +4189,7 @@
 
     check-cast v0, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2390
+    .line 2395
     invoke-interface {v0, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onQosParametersChanged(IILcom/qti/extphone/QosParametersResult;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4179,7 +4201,7 @@
 
     const-string p1, "onQosParametersChanged: caught remote exception"
 
-    .line 2393
+    .line 2398
     invoke-static {v1, p1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -4191,14 +4213,14 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2259
+    .line 2264
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result v1
 
     const/16 v2, 0x17
 
-    .line 2261
+    .line 2266
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -4221,7 +4243,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2264
+    .line 2269
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4232,7 +4254,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2266
+    .line 2271
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4247,10 +4269,10 @@
 
     move-result-object v4
 
-    .line 2264
+    .line 2269
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2267
+    .line 2272
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onSendUserPreferenceForDataDuringVoiceCall(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4260,7 +4282,7 @@
     :catch_0
     move-exception p1
 
-    .line 2271
+    .line 2276
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4277,7 +4299,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2273
+    .line 2278
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -4293,12 +4315,12 @@
 .method private onSetNrUltraWidebandIconConfigResponse(ILcom/qti/extphone/Token;)V
     .locals 1
 
-    .line 2433
+    .line 2438
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result p1
 
-    .line 2434
+    .line 2439
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4317,7 +4339,7 @@
 
     invoke-static {v0, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2435
+    .line 2440
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4334,7 +4356,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2009
+    .line 2014
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -4342,7 +4364,7 @@
 
     const/16 v2, 0x19
 
-    .line 2010
+    .line 2015
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -4364,7 +4386,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2012
+    .line 2017
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4375,7 +4397,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2013
+    .line 2018
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4390,13 +4412,13 @@
 
     move-result-object v4
 
-    .line 2012
+    .line 2017
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2014
+    .line 2019
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onSignalStrength(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/SignalStrength;)V
 
-    .line 2015
+    .line 2020
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4412,7 +4434,7 @@
     :catch_0
     move-exception p0
 
-    .line 2018
+    .line 2023
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4438,7 +4460,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1977
+    .line 1982
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -4446,7 +4468,7 @@
 
     const/16 v2, 0x1b
 
-    .line 1978
+    .line 1983
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -4468,7 +4490,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1980
+    .line 1985
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4479,7 +4501,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1981
+    .line 1986
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4494,13 +4516,13 @@
 
     move-result-object v4
 
-    .line 1980
+    .line 1985
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1982
+    .line 1987
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onUpperLayerIndInfo(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/UpperLayerIndInfo;)V
 
-    .line 1983
+    .line 1988
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4516,7 +4538,7 @@
     :catch_0
     move-exception p0
 
-    .line 1986
+    .line 1991
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4540,14 +4562,14 @@
 .method private registerCallback(I)V
     .locals 1
 
-    .line 1084
+    .line 1089
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1085
+    .line 1090
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p1, v0, p1
@@ -4565,7 +4587,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2041
+    .line 2046
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -4573,7 +4595,7 @@
 
     const/16 v2, 0x1d
 
-    .line 2042
+    .line 2047
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -4595,7 +4617,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2044
+    .line 2049
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4606,7 +4628,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2045
+    .line 2050
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -4621,13 +4643,13 @@
 
     move-result-object v4
 
-    .line 2044
+    .line 2049
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2046
+    .line 2051
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->sendCdmaSmsResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/SmsResult;)V
 
-    .line 2047
+    .line 2052
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4643,7 +4665,7 @@
     :catch_0
     move-exception p0
 
-    .line 2050
+    .line 2055
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4667,12 +4689,12 @@
 .method private sendImeiInfoIndInternal(ILcom/qti/extphone/QtiImeiInfo;)V
     .locals 5
 
-    .line 2220
+    .line 2225
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 2221
+    .line 2226
     :try_start_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
@@ -4695,7 +4717,7 @@
 
     const-string v2, "QtiRadioProxy"
 
-    .line 2222
+    .line 2227
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4712,12 +4734,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2223
+    .line 2228
     invoke-virtual {v1, p1, p2}, Lcom/qti/phone/QtiRadioProxy$IQtiRadioInternalCallback;->onImeiChanged(ILcom/qti/extphone/QtiImeiInfo;)V
 
     goto :goto_0
 
-    .line 2225
+    .line 2230
     :cond_0
     monitor-exit v0
 
@@ -4736,17 +4758,17 @@
 .method private sendImeiInfoResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/QtiImeiInfo;)V
     .locals 8
 
-    .line 2208
+    .line 2213
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
     move-result v0
 
-    .line 2209
+    .line 2214
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 2210
+    .line 2215
     :try_start_0
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
@@ -4769,7 +4791,7 @@
 
     const-string v4, "QtiRadioProxy"
 
-    .line 2211
+    .line 2216
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4780,7 +4802,7 @@
 
     iget-object v6, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2212
+    .line 2217
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -4795,13 +4817,13 @@
 
     move-result-object v5
 
-    .line 2211
+    .line 2216
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2213
+    .line 2218
     invoke-virtual {v3, p1, p2, p3, p4}, Lcom/qti/phone/QtiRadioProxy$IQtiRadioInternalCallback;->getImeiResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/QtiImeiInfo;)V
 
-    .line 2214
+    .line 2219
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4812,7 +4834,7 @@
 
     goto :goto_0
 
-    .line 2216
+    .line 2221
     :cond_0
     monitor-exit v1
 
@@ -4837,7 +4859,7 @@
 
     const/16 v2, 0x2a
 
-    .line 2400
+    .line 2405
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -4860,7 +4882,7 @@
 
     check-cast v1, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2402
+    .line 2407
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4877,7 +4899,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2403
+    .line 2408
     invoke-interface {v1, p1, p2}, Lcom/qti/extphone/IExtPhoneCallback;->onSimPersoUnlockStatusChange(ILcom/qti/extphone/QtiPersoUnlockStatus;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4887,7 +4909,7 @@
     :catch_0
     move-exception p0
 
-    .line 2406
+    .line 2411
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4913,7 +4935,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2165
+    .line 2170
     :try_start_0
     invoke-virtual {p1}, Lcom/qti/extphone/Token;->get()I
 
@@ -4921,7 +4943,7 @@
 
     const/16 v1, 0x1c
 
-    .line 2166
+    .line 2171
     invoke-virtual {p0, p1, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -4943,7 +4965,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2168
+    .line 2173
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4954,7 +4976,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2169
+    .line 2174
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -4969,13 +4991,13 @@
 
     move-result-object v3
 
-    .line 2168
+    .line 2173
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2170
+    .line 2175
     invoke-interface {v2, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->queryCallForwardStatusResponse(Lcom/qti/extphone/Status;[Lcom/qti/extphone/QtiCallForwardInfo;)V
 
-    .line 2171
+    .line 2176
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4991,7 +5013,7 @@
     :catch_0
     move-exception p0
 
-    .line 2174
+    .line 2179
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5017,7 +5039,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2180
+    .line 2185
     :try_start_0
     invoke-virtual {p1}, Lcom/qti/extphone/Token;->get()I
 
@@ -5025,7 +5047,7 @@
 
     const/4 v1, 0x1
 
-    .line 2181
+    .line 2186
     invoke-virtual {p0, p1, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -5047,7 +5069,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2183
+    .line 2188
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5058,7 +5080,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2184
+    .line 2189
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -5073,13 +5095,13 @@
 
     move-result-object v3
 
-    .line 2183
+    .line 2188
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2185
+    .line 2190
     invoke-interface {v2, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->getFacilityLockForAppResponse(Lcom/qti/extphone/Status;[I)V
 
-    .line 2186
+    .line 2191
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5095,7 +5117,7 @@
     :catch_0
     move-exception p0
 
-    .line 2189
+    .line 2194
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5119,14 +5141,14 @@
 .method private setAidlDynamicSubscriptionChange(Lcom/qti/extphone/Token;Z)V
     .locals 5
 
-    .line 1560
+    .line 1565
     sget-object v0, Lcom/qti/phone/QtiRadioProxy;->sAidlDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
     const-string v1, "QtiRadioProxy"
 
     if-nez v0, :cond_0
 
-    .line 1561
+    .line 1566
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->createAidlDynamicSubscriptionManager()Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
     move-result-object v0
@@ -5137,7 +5159,7 @@
 
     const-string p0, "createAidlDynamicSubscriptionManager returned null"
 
-    .line 1563
+    .line 1568
     invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
@@ -5147,7 +5169,7 @@
 
     const/4 v2, 0x3
 
-    .line 1568
+    .line 1573
     :try_start_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -5165,7 +5187,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1569
+    .line 1574
     sget-object v3, Lcom/qti/phone/QtiRadioProxy;->sAidlDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;
 
     invoke-interface {v3, p2}, Lvendor/qti/hardware/data/dynamicddsaidlservice/ISubscriptionManager;->setDynamicSubscriptionChange(Z)I
@@ -5176,7 +5198,7 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1574
+    .line 1579
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0, v1, p2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -5196,12 +5218,12 @@
     :try_start_1
     const-string v4, "AIDL: setDynamicSubscriptionChange exception"
 
-    .line 1571
+    .line 1576
     invoke-static {v1, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1574
+    .line 1579
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0, v2, p2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -5222,7 +5244,7 @@
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1576
+    .line 1581
     throw v1
 .end method
 
@@ -5231,7 +5253,7 @@
 
     const-string p3, "QtiRadioProxy"
 
-    .line 2148
+    .line 2153
     :try_start_0
     invoke-virtual {p4}, Lcom/qti/extphone/QRadioResponseInfo;->getSerial()I
 
@@ -5239,7 +5261,7 @@
 
     const/16 v1, 0x1e
 
-    .line 2149
+    .line 2154
     invoke-virtual {p0, v0, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -5261,7 +5283,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2152
+    .line 2157
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5272,7 +5294,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2153
+    .line 2158
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -5287,13 +5309,13 @@
 
     move-result-object v3
 
-    .line 2152
+    .line 2157
     invoke-static {p3, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2154
+    .line 2159
     invoke-interface {v2, p1, p2, p4}, Lcom/qti/extphone/IExtPhoneCallback;->setCarrierInfoForImsiEncryptionResponse(ILcom/qti/extphone/Token;Lcom/qti/extphone/QRadioResponseInfo;)V
 
-    .line 2155
+    .line 2160
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5309,7 +5331,7 @@
     :catch_0
     move-exception p0
 
-    .line 2158
+    .line 2163
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5333,14 +5355,14 @@
 .method private setDynamicSubscriptionChange(Lcom/qti/extphone/Token;Z)V
     .locals 5
 
-    .line 1540
+    .line 1545
     sget-object v0, Lcom/qti/phone/QtiRadioProxy;->sDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
     const-string v1, "QtiRadioProxy"
 
     if-nez v0, :cond_0
 
-    .line 1541
+    .line 1546
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->getDynamicSubscriptionManager()Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
     move-result-object v0
@@ -5351,7 +5373,7 @@
 
     const-string p0, "getDynamicSubscriptionManager returned null"
 
-    .line 1543
+    .line 1548
     invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
@@ -5361,7 +5383,7 @@
 
     const/4 v2, 0x3
 
-    .line 1548
+    .line 1553
     :try_start_0
     sget-object v3, Lcom/qti/phone/QtiRadioProxy;->sDynamicSubscriptionManager:Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
@@ -5373,7 +5395,7 @@
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1553
+    .line 1558
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0, v1, p2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -5396,12 +5418,12 @@
     :try_start_1
     const-string v4, "setDynamicSubscriptionChange exception"
 
-    .line 1550
+    .line 1555
     invoke-static {v1, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1553
+    .line 1558
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0, v2, p2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -5422,14 +5444,14 @@
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1555
+    .line 1560
     throw v1
 .end method
 
 .method private setLooper(Landroid/os/Looper;)V
     .locals 1
 
-    .line 1080
+    .line 1085
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;
 
     invoke-direct {v0, p0, p1}, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;-><init>(Lcom/qti/phone/QtiRadioProxy;Landroid/os/Looper;)V
@@ -5444,7 +5466,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2102
+    .line 2107
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -5452,7 +5474,7 @@
 
     const/16 v2, 0x20
 
-    .line 2103
+    .line 2108
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -5474,7 +5496,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2106
+    .line 2111
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5485,7 +5507,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2107
+    .line 2112
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5500,13 +5522,13 @@
 
     move-result-object v4
 
-    .line 2106
+    .line 2111
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2108
+    .line 2113
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->setNetworkSelectionModeAutomaticResponse(ILcom/qti/extphone/Token;I)V
 
-    .line 2109
+    .line 2114
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5522,7 +5544,7 @@
     :catch_0
     move-exception p0
 
-    .line 2112
+    .line 2117
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5548,7 +5570,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2086
+    .line 2091
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -5556,7 +5578,7 @@
 
     const/16 v2, 0x21
 
-    .line 2087
+    .line 2092
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -5578,7 +5600,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2090
+    .line 2095
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5589,7 +5611,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2091
+    .line 2096
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5604,13 +5626,13 @@
 
     move-result-object v4
 
-    .line 2090
+    .line 2095
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2092
+    .line 2097
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->setNetworkSelectionModeManualResponse(ILcom/qti/extphone/Token;I)V
 
-    .line 2093
+    .line 2098
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5626,7 +5648,7 @@
     :catch_0
     move-exception p0
 
-    .line 2096
+    .line 2101
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5650,7 +5672,7 @@
 .method private setSmartDdsSwitchToggleResponse(Lcom/qti/extphone/Token;II)V
     .locals 6
 
-    .line 1647
+    .line 1652
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5678,7 +5700,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 1650
+    .line 1655
     :goto_0
     :try_start_0
     invoke-virtual {p1}, Lcom/qti/extphone/Token;->get()I
@@ -5687,7 +5709,7 @@
 
     const/16 v1, 0x23
 
-    .line 1651
+    .line 1656
     invoke-virtual {p0, p3, v1}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -5709,7 +5731,7 @@
 
     check-cast v2, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1653
+    .line 1658
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5720,7 +5742,7 @@
 
     iget-object v4, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1654
+    .line 1659
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -5735,13 +5757,13 @@
 
     move-result-object v3
 
-    .line 1653
+    .line 1658
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1655
+    .line 1660
     invoke-interface {v2, p1, p2}, Lcom/qti/extphone/IExtPhoneCallback;->setSmartDdsSwitchToggleResponse(Lcom/qti/extphone/Token;Z)V
 
-    .line 1656
+    .line 1661
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5757,7 +5779,7 @@
     :catch_0
     move-exception p0
 
-    .line 1659
+    .line 1664
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5783,7 +5805,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2056
+    .line 2061
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -5791,7 +5813,7 @@
 
     const/16 v2, 0x24
 
-    .line 2057
+    .line 2062
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -5813,7 +5835,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2059
+    .line 2064
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5824,7 +5846,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2060
+    .line 2065
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5839,13 +5861,13 @@
 
     move-result-object v4
 
-    .line 2059
+    .line 2064
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2061
+    .line 2066
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->startNetworkScanResponse(ILcom/qti/extphone/Token;I)V
 
-    .line 2062
+    .line 2067
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5861,7 +5883,7 @@
     :catch_0
     move-exception p0
 
-    .line 2065
+    .line 2070
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5887,7 +5909,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 2071
+    .line 2076
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -5895,7 +5917,7 @@
 
     const/16 v2, 0x25
 
-    .line 2072
+    .line 2077
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -5917,7 +5939,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2074
+    .line 2079
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5928,7 +5950,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 2075
+    .line 2080
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -5943,13 +5965,13 @@
 
     move-result-object v4
 
-    .line 2074
+    .line 2079
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2076
+    .line 2081
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->stopNetworkScanResponse(ILcom/qti/extphone/Token;I)V
 
-    .line 2077
+    .line 2082
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5965,7 +5987,7 @@
     :catch_0
     move-exception p0
 
-    .line 2080
+    .line 2085
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5996,7 +6018,7 @@
         }
     .end annotation
 
-    .line 1201
+    .line 1206
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6015,7 +6037,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1202
+    .line 1207
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6032,13 +6054,13 @@
 
     goto :goto_0
 
-    .line 1205
+    .line 1210
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1206
+    .line 1211
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6057,7 +6079,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1207
+    .line 1212
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6078,10 +6100,10 @@
 
     const-string p1, "5G-Middleware:"
 
-    .line 2489
+    .line 2494
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2490
+    .line 2495
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -6100,18 +6122,18 @@
 
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2491
+    .line 2496
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
     const-string p1, "Inflight requests : "
 
-    .line 2493
+    .line 2498
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2494
+    .line 2499
     invoke-direct {p0, p2}, Lcom/qti/phone/QtiRadioProxy;->dumpInflightRequests(Ljava/io/PrintWriter;)V
 
-    .line 2495
+    .line 2500
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
     return-void
@@ -6125,7 +6147,7 @@
         }
     .end annotation
 
-    .line 1190
+    .line 1195
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6144,7 +6166,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1191
+    .line 1196
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6161,13 +6183,13 @@
 
     goto :goto_0
 
-    .line 1194
+    .line 1199
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1195
+    .line 1200
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6186,7 +6208,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1196
+    .line 1201
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6210,7 +6232,7 @@
         }
     .end annotation
 
-    .line 1224
+    .line 1229
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6229,7 +6251,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1225
+    .line 1230
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6246,13 +6268,13 @@
 
     goto :goto_0
 
-    .line 1228
+    .line 1233
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1229
+    .line 1234
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6271,7 +6293,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1231
+    .line 1236
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6295,7 +6317,7 @@
         }
     .end annotation
 
-    .line 1114
+    .line 1119
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6314,7 +6336,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1115
+    .line 1120
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6331,13 +6353,13 @@
 
     goto :goto_0
 
-    .line 1118
+    .line 1123
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1119
+    .line 1124
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6356,7 +6378,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1121
+    .line 1126
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6380,7 +6402,7 @@
         }
     .end annotation
 
-    .line 1473
+    .line 1478
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6399,7 +6421,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1474
+    .line 1479
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6410,7 +6432,7 @@
 
     return-object p0
 
-    .line 1477
+    .line 1482
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
@@ -6431,7 +6453,7 @@
         }
     .end annotation
 
-    .line 1443
+    .line 1448
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6450,7 +6472,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1444
+    .line 1449
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6467,13 +6489,13 @@
 
     goto :goto_0
 
-    .line 1447
+    .line 1452
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1448
+    .line 1453
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6492,7 +6514,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1450
+    .line 1455
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6516,7 +6538,7 @@
         }
     .end annotation
 
-    .line 1386
+    .line 1391
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6535,7 +6557,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1387
+    .line 1392
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6552,13 +6574,13 @@
 
     goto :goto_0
 
-    .line 1390
+    .line 1395
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v2
 
-    .line 1391
+    .line 1396
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2}, Lcom/qti/extphone/Token;->get()I
@@ -6577,7 +6599,7 @@
 
     invoke-virtual {v0, v1, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1393
+    .line 1398
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object v1, p0, p1
@@ -6607,7 +6629,7 @@
         }
     .end annotation
 
-    .line 1399
+    .line 1404
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6626,7 +6648,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1400
+    .line 1405
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6637,13 +6659,13 @@
 
     return-object p0
 
-    .line 1403
+    .line 1408
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1404
+    .line 1409
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6662,7 +6684,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1406
+    .line 1411
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6680,7 +6702,7 @@
         }
     .end annotation
 
-    .line 1167
+    .line 1172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6699,7 +6721,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1168
+    .line 1173
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6716,13 +6738,13 @@
 
     goto :goto_0
 
-    .line 1171
+    .line 1176
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1172
+    .line 1177
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6741,7 +6763,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1174
+    .line 1179
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6765,7 +6787,7 @@
         }
     .end annotation
 
-    .line 1094
+    .line 1099
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     const/4 v0, 0x0
@@ -6787,7 +6809,7 @@
         }
     .end annotation
 
-    .line 1090
+    .line 1095
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     const/4 v0, 0x0
@@ -6809,7 +6831,7 @@
         }
     .end annotation
 
-    .line 1098
+    .line 1103
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     const/4 v0, 0x0
@@ -6831,7 +6853,7 @@
         }
     .end annotation
 
-    .line 1462
+    .line 1467
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6850,7 +6872,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1463
+    .line 1468
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6867,13 +6889,13 @@
 
     goto :goto_0
 
-    .line 1466
+    .line 1471
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1467
+    .line 1472
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6892,7 +6914,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1468
+    .line 1473
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -6916,7 +6938,7 @@
         }
     .end annotation
 
-    .line 1296
+    .line 1301
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6935,7 +6957,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1297
+    .line 1302
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -6952,13 +6974,13 @@
 
     goto :goto_0
 
-    .line 1300
+    .line 1305
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1301
+    .line 1306
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -6977,7 +6999,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1303
+    .line 1308
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7001,7 +7023,7 @@
         }
     .end annotation
 
-    .line 1481
+    .line 1486
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7020,7 +7042,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1482
+    .line 1487
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7031,7 +7053,7 @@
 
     return-object p0
 
-    .line 1485
+    .line 1490
     :cond_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
@@ -7053,13 +7075,13 @@
 
     const-string v1, "init: set ExtTelephonyServiceImpl"
 
-    .line 1016
+    .line 1021
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1017
+    .line 1022
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mExtTelephonyServiceImpl:Lcom/qti/phone/ExtTelephonyServiceImpl;
 
-    .line 1018
+    .line 1023
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     array-length p1, p1
@@ -7076,7 +7098,7 @@
 
     invoke-interface {p1, v0}, Ljava/util/stream/IntStream;->forEach(Ljava/util/function/IntConsumer;)V
 
-    .line 1019
+    .line 1024
     invoke-direct {p0}, Lcom/qti/phone/QtiRadioProxy;->callDynamicDdsSwitchOnDemand()V
 
     return-void
@@ -7089,17 +7111,17 @@
 
     const-string v1, "initDelayNotifyParams"
 
-    .line 1024
+    .line 1029
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1025
+    .line 1030
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
 
     const-string v1, "slotId0"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1026
+    .line 1031
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
 
     const-string v1, "slotId1"
@@ -7110,7 +7132,7 @@
 
     move v1, v0
 
-    .line 1028
+    .line 1033
     :goto_0
     sget-object v2, Lcom/qti/phone/QtiRadioProxy;->ExceptionMCCMNC:[I
 
@@ -7118,7 +7140,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 1029
+    .line 1034
     sget-object v3, Lcom/qti/phone/QtiRadioProxy;->mDelayExceptionMccMncList:Ljava/util/ArrayList;
 
     aget v2, v2, v1
@@ -7133,7 +7155,7 @@
 
     goto :goto_0
 
-    .line 1032
+    .line 1037
     :cond_0
     :goto_1
     sget-object v1, Lcom/qti/phone/QtiRadioProxy;->DTAG_MCCMNC:[I
@@ -7142,7 +7164,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 1033
+    .line 1038
     sget-object v2, Lcom/qti/phone/QtiRadioProxy;->mDelayDTAGMccMncList:Ljava/util/ArrayList;
 
     aget v1, v1, v0
@@ -7157,26 +7179,26 @@
 
     goto :goto_1
 
-    .line 1036
+    .line 1041
     :cond_1
     invoke-virtual {p0}, Lcom/qti/phone/QtiRadioProxy;->resetDelayNotifyParams()V
 
-    .line 1038
+    .line 1043
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     const-string v1, "android.intent.action.AIRPLANE_MODE"
 
-    .line 1039
+    .line 1044
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
-    .line 1040
+    .line 1045
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1041
+    .line 1046
     sget-object v1, Lcom/qti/phone/QtiRadioProxy;->mContext:Landroid/content/Context;
 
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
@@ -7194,14 +7216,14 @@
         }
     .end annotation
 
-    .line 1455
+    .line 1460
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1456
+    .line 1461
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7221,7 +7243,7 @@
 .method public isFeatureSupported(I)Z
     .locals 1
 
-    .line 1426
+    .line 1431
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     const/4 v0, 0x0
@@ -7238,7 +7260,7 @@
 .method public isSmartDdsSwitchFeatureAvailable()Z
     .locals 0
 
-    .line 1411
+    .line 1416
     iget-boolean p0, p0, Lcom/qti/phone/QtiRadioProxy;->mCneDataFactoryAvailable:Z
 
     return p0
@@ -7247,7 +7269,7 @@
 .method public onMultiSimConfigChanged(I)V
     .locals 4
 
-    .line 990
+    .line 995
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7266,7 +7288,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 993
+    .line 998
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     array-length v1, v0
@@ -7275,7 +7297,7 @@
 
     return-void
 
-    .line 997
+    .line 1002
     :cond_0
     array-length v0, v0
 
@@ -7284,7 +7306,7 @@
     :goto_0
     if-lt v1, p1, :cond_1
 
-    .line 1001
+    .line 1006
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object v2, v2, v1
@@ -7293,7 +7315,7 @@
 
     invoke-interface {v2, v3}, Lcom/qti/phone/IQtiRadioConnectionInterface;->unRegisterCallback(Lcom/qti/phone/IQtiRadioConnectionCallback;)V
 
-    .line 1002
+    .line 1007
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     const/4 v3, 0x0
@@ -7304,7 +7326,7 @@
 
     goto :goto_0
 
-    .line 1005
+    .line 1010
     :cond_1
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
@@ -7319,7 +7341,7 @@
     :goto_1
     if-ge v0, p1, :cond_2
 
-    .line 1009
+    .line 1014
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     sget-object v2, Lcom/qti/phone/QtiRadioProxy;->mContext:Landroid/content/Context;
@@ -7330,7 +7352,7 @@
 
     aput-object v2, v1, v0
 
-    .line 1010
+    .line 1015
     invoke-direct {p0, v0}, Lcom/qti/phone/QtiRadioProxy;->registerCallback(I)V
 
     add-int/lit8 v0, v0, 0x1
@@ -7346,7 +7368,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1914
+    .line 1919
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -7354,7 +7376,7 @@
 
     const/16 v2, 0x12
 
-    .line 1915
+    .line 1920
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -7376,7 +7398,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1917
+    .line 1922
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7387,7 +7409,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1918
+    .line 1923
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -7402,13 +7424,13 @@
 
     move-result-object v4
 
-    .line 1917
+    .line 1922
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1919
+    .line 1924
     invoke-interface {v3, p1, p2, p3, p4}, Lcom/qti/extphone/IExtPhoneCallback;->onNrConfigStatus(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/NrConfig;)V
 
-    .line 1920
+    .line 1925
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7424,7 +7446,7 @@
     :catch_0
     move-exception p0
 
-    .line 1923
+    .line 1928
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7450,7 +7472,7 @@
 
     const-string v0, "QtiRadioProxy"
 
-    .line 1899
+    .line 1904
     :try_start_0
     invoke-virtual {p2}, Lcom/qti/extphone/Token;->get()I
 
@@ -7458,7 +7480,7 @@
 
     const/16 v2, 0x18
 
-    .line 1900
+    .line 1905
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -7480,7 +7502,7 @@
 
     check-cast v3, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 1902
+    .line 1907
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7491,7 +7513,7 @@
 
     iget-object v5, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1903
+    .line 1908
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -7506,13 +7528,13 @@
 
     move-result-object v4
 
-    .line 1902
+    .line 1907
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1904
+    .line 1909
     invoke-interface {v3, p1, p2, p3}, Lcom/qti/extphone/IExtPhoneCallback;->onSetNrConfig(ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;)V
 
-    .line 1905
+    .line 1910
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7528,7 +7550,7 @@
     :catch_0
     move-exception p0
 
-    .line 1908
+    .line 1913
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -7557,7 +7579,7 @@
         }
     .end annotation
 
-    .line 1284
+    .line 1289
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7576,7 +7598,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1285
+    .line 1290
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7593,13 +7615,13 @@
 
     goto :goto_0
 
-    .line 1288
+    .line 1293
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1289
+    .line 1294
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -7618,7 +7640,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1291
+    .line 1296
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7642,7 +7664,7 @@
         }
     .end annotation
 
-    .line 1236
+    .line 1241
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7661,7 +7683,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1237
+    .line 1242
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7678,13 +7700,13 @@
 
     goto :goto_0
 
-    .line 1240
+    .line 1245
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1241
+    .line 1246
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -7703,7 +7725,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1243
+    .line 1248
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7727,7 +7749,7 @@
         }
     .end annotation
 
-    .line 1373
+    .line 1378
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7746,7 +7768,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1374
+    .line 1379
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7763,13 +7785,13 @@
 
     goto :goto_0
 
-    .line 1377
+    .line 1382
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v2
 
-    .line 1378
+    .line 1383
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2}, Lcom/qti/extphone/Token;->get()I
@@ -7788,7 +7810,7 @@
 
     invoke-virtual {v0, v1, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1380
+    .line 1385
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object v1, p0, p1
@@ -7816,7 +7838,7 @@
         }
     .end annotation
 
-    .line 1126
+    .line 1131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7835,7 +7857,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1127
+    .line 1132
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7852,13 +7874,13 @@
 
     goto :goto_0
 
-    .line 1130
+    .line 1135
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1131
+    .line 1136
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -7877,7 +7899,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1133
+    .line 1138
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7901,7 +7923,7 @@
         }
     .end annotation
 
-    .line 1212
+    .line 1217
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7920,7 +7942,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1213
+    .line 1218
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -7937,13 +7959,13 @@
 
     goto :goto_0
 
-    .line 1216
+    .line 1221
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1217
+    .line 1222
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -7962,7 +7984,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1219
+    .line 1224
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -7986,7 +8008,7 @@
         }
     .end annotation
 
-    .line 1179
+    .line 1184
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8005,7 +8027,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1180
+    .line 1185
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8022,13 +8044,13 @@
 
     goto :goto_0
 
-    .line 1183
+    .line 1188
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1184
+    .line 1189
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8047,7 +8069,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1185
+    .line 1190
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8071,7 +8093,7 @@
         }
     .end annotation
 
-    .line 1248
+    .line 1253
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8090,7 +8112,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1249
+    .line 1254
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8107,13 +8129,13 @@
 
     goto :goto_0
 
-    .line 1252
+    .line 1257
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1253
+    .line 1258
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8132,7 +8154,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1255
+    .line 1260
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8156,7 +8178,7 @@
         }
     .end annotation
 
-    .line 1102
+    .line 1107
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8175,7 +8197,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1103
+    .line 1108
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8192,13 +8214,13 @@
 
     goto :goto_0
 
-    .line 1106
+    .line 1111
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1107
+    .line 1112
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8217,7 +8239,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1109
+    .line 1114
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8241,7 +8263,7 @@
         }
     .end annotation
 
-    .line 1260
+    .line 1265
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8260,7 +8282,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1261
+    .line 1266
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8277,13 +8299,13 @@
 
     goto :goto_0
 
-    .line 1264
+    .line 1269
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1265
+    .line 1270
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8302,7 +8324,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1267
+    .line 1272
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8326,7 +8348,7 @@
         }
     .end annotation
 
-    .line 1272
+    .line 1277
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8345,7 +8367,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1273
+    .line 1278
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8362,13 +8384,13 @@
 
     goto :goto_0
 
-    .line 1276
+    .line 1281
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1277
+    .line 1282
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8387,7 +8409,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1279
+    .line 1284
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8406,7 +8428,7 @@
 .method registerInternalCallback(Lcom/qti/phone/QtiRadioProxy$IQtiRadioInternalCallback;)V
     .locals 4
 
-    .line 2229
+    .line 2234
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     monitor-enter v0
@@ -8414,7 +8436,7 @@
     :try_start_0
     const-string v1, "QtiRadioProxy"
 
-    .line 2230
+    .line 2235
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8431,12 +8453,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2231
+    .line 2236
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2232
+    .line 2237
     monitor-exit v0
 
     return-void
@@ -8454,7 +8476,7 @@
 .method public removeClientFromInflightRequests(Lcom/qti/extphone/IExtPhoneCallback;)V
     .locals 5
 
-    .line 1664
+    .line 1669
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
@@ -8483,7 +8505,7 @@
 
     move-result v1
 
-    .line 1665
+    .line 1670
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8496,7 +8518,7 @@
 
     check-cast v2, Lcom/qti/phone/QtiRadioProxy$Transaction;
 
-    .line 1666
+    .line 1671
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mExtTelephonyServiceImpl:Lcom/qti/phone/ExtTelephonyServiceImpl;
 
     iget-object v4, v2, Lcom/qti/phone/QtiRadioProxy$Transaction;->mClient:Lcom/qti/extphone/Client;
@@ -8509,7 +8531,7 @@
 
     iget-object v2, v2, Lcom/qti/phone/QtiRadioProxy$Transaction;->mClient:Lcom/qti/extphone/Client;
 
-    .line 1667
+    .line 1672
     invoke-virtual {v2}, Lcom/qti/extphone/Client;->getCallback()Lcom/qti/extphone/IExtPhoneCallback;
 
     move-result-object v2
@@ -8524,7 +8546,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 1668
+    .line 1673
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8541,7 +8563,7 @@
 
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 1669
+    .line 1674
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -8558,10 +8580,10 @@
 
     const-string v3, "QtiRadioProxy"
 
-    .line 1668
+    .line 1673
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1670
+    .line 1675
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8583,17 +8605,17 @@
 
     const-string v1, "resetDelayNotifyParams"
 
-    .line 1046
+    .line 1051
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1047
+    .line 1052
     new-instance v0, Lcom/qti/phone/QtiRadioProxy$Result;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1, v1, v1}, Lcom/qti/phone/QtiRadioProxy$Result;-><init>(Lcom/qti/phone/QtiRadioProxy;Lcom/qti/extphone/Token;Lcom/qti/extphone/Status;Ljava/lang/Object;)V
 
-    .line 1048
+    .line 1053
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIcon:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8610,7 +8632,7 @@
 
     invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1049
+    .line 1054
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIcon:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8625,7 +8647,7 @@
 
     invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1050
+    .line 1055
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIconMs:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8644,7 +8666,7 @@
 
     invoke-virtual {v1, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1051
+    .line 1056
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyNrIconMs:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8657,60 +8679,8 @@
 
     invoke-virtual {v1, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1052
-    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
-
-    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1053
-    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
-
-    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1055
-    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
-
-    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1056
-    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
-
-    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 1057
-    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAllocMs:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
 
@@ -8720,9 +8690,61 @@
 
     check-cast v2, Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1058
+    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedNrIconResult:Ljava/util/HashMap;
+
+    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1060
+    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
+
+    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1061
+    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAlloc:Ljava/util/HashMap;
+
+    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1062
+    iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAllocMs:Ljava/util/HashMap;
+
+    iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1063
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mDelayingNotifyBearerAllocMs:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8735,7 +8757,7 @@
 
     invoke-virtual {v1, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1059
+    .line 1064
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedBearerAllocResult:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8748,7 +8770,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1060
+    .line 1065
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mUpdatedBearerAllocResult:Ljava/util/HashMap;
 
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mSlotString:Ljava/util/ArrayList;
@@ -8775,7 +8797,7 @@
         }
     .end annotation
 
-    .line 1685
+    .line 1690
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -8784,7 +8806,7 @@
 
     if-eq p1, v1, :cond_1
 
-    .line 1687
+    .line 1692
     iget-object p2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8797,7 +8819,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1688
+    .line 1693
     iget-object p2, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8810,10 +8832,10 @@
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Transaction;
 
-    .line 1689
+    .line 1694
     iget-object p1, p1, Lcom/qti/phone/QtiRadioProxy$Transaction;->mClient:Lcom/qti/extphone/Client;
 
-    .line 1690
+    .line 1695
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mExtTelephonyServiceImpl:Lcom/qti/phone/ExtTelephonyServiceImpl;
 
     invoke-virtual {p0, p1}, Lcom/qti/phone/ExtTelephonyServiceImpl;->isClientValid(Lcom/qti/extphone/Client;)Z
@@ -8822,7 +8844,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1691
+    .line 1696
     invoke-virtual {p1}, Lcom/qti/extphone/Client;->getCallback()Lcom/qti/extphone/IExtPhoneCallback;
 
     move-result-object p0
@@ -8831,7 +8853,7 @@
 
     goto :goto_0
 
-    .line 1693
+    .line 1698
     :cond_0
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -8853,7 +8875,7 @@
 
     goto :goto_0
 
-    .line 1697
+    .line 1702
     :cond_1
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mExtTelephonyServiceImpl:Lcom/qti/phone/ExtTelephonyServiceImpl;
 
@@ -8874,7 +8896,7 @@
         }
     .end annotation
 
-    .line 1309
+    .line 1314
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8893,7 +8915,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1310
+    .line 1315
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -8910,13 +8932,13 @@
 
     goto :goto_0
 
-    .line 1313
+    .line 1318
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1314
+    .line 1319
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -8935,7 +8957,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1316
+    .line 1321
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -8960,7 +8982,7 @@
 
     const/16 v2, 0x11
 
-    .line 2196
+    .line 2201
     :try_start_0
     invoke-virtual {p0, v1, v2}, Lcom/qti/phone/QtiRadioProxy;->retrieveCallbacks(II)Ljava/util/ArrayList;
 
@@ -8983,7 +9005,7 @@
 
     check-cast v1, Lcom/qti/extphone/IExtPhoneCallback;
 
-    .line 2198
+    .line 2203
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9000,7 +9022,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2199
+    .line 2204
     invoke-interface {v1, p1}, Lcom/qti/extphone/IExtPhoneCallback;->onImeiTypeChanged([Lcom/qti/extphone/QtiImeiInfo;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -9010,7 +9032,7 @@
     :catch_0
     move-exception p0
 
-    .line 2202
+    .line 2207
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -9034,12 +9056,12 @@
 .method sendMcfgRefreshInfo(Lcom/qti/extphone/Token;Lcom/qti/phone/QtiMcfgRefreshInfo;)V
     .locals 3
 
-    .line 2358
+    .line 2363
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     monitor-enter p1
 
-    .line 2359
+    .line 2364
     :try_start_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
@@ -9064,15 +9086,15 @@
 
     const-string v2, "sendMcfgRefreshInfo"
 
-    .line 2360
+    .line 2365
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2361
+    .line 2366
     invoke-virtual {v0, p2}, Lcom/qti/phone/QtiRadioProxy$IQtiRadioInternalCallback;->onMcfgRefresh(Lcom/qti/phone/QtiMcfgRefreshInfo;)V
 
     goto :goto_0
 
-    .line 2363
+    .line 2368
     :cond_0
     monitor-exit p1
 
@@ -9096,7 +9118,7 @@
         }
     .end annotation
 
-    .line 1431
+    .line 1436
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9115,7 +9137,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1432
+    .line 1437
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9132,13 +9154,13 @@
 
     goto :goto_0
 
-    .line 1435
+    .line 1440
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1436
+    .line 1441
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9157,7 +9179,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1438
+    .line 1443
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9181,7 +9203,7 @@
         }
     .end annotation
 
-    .line 1360
+    .line 1365
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9200,7 +9222,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1361
+    .line 1366
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9217,13 +9239,13 @@
 
     goto :goto_0
 
-    .line 1364
+    .line 1369
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1365
+    .line 1370
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9242,7 +9264,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1367
+    .line 1372
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9266,7 +9288,7 @@
         }
     .end annotation
 
-    .line 1153
+    .line 1158
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9291,7 +9313,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1155
+    .line 1160
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9308,13 +9330,13 @@
 
     goto :goto_0
 
-    .line 1158
+    .line 1163
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1159
+    .line 1164
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9333,7 +9355,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1161
+    .line 1166
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9357,7 +9379,7 @@
         }
     .end annotation
 
-    .line 1347
+    .line 1352
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9376,7 +9398,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1348
+    .line 1353
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9393,13 +9415,13 @@
 
     goto :goto_0
 
-    .line 1351
+    .line 1356
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1352
+    .line 1357
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9418,7 +9440,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1354
+    .line 1359
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9442,12 +9464,12 @@
         }
     .end annotation
 
-    .line 1138
+    .line 1143
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1139
+    .line 1144
     sget-object v1, Lcom/qti/phone/QtiRadioProxy;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -9458,7 +9480,7 @@
 
     move-result-object v1
 
-    .line 1140
+    .line 1145
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9495,7 +9517,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1142
+    .line 1147
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9512,13 +9534,13 @@
 
     goto :goto_0
 
-    .line 1145
+    .line 1150
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1146
+    .line 1151
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9537,7 +9559,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1147
+    .line 1152
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9579,7 +9601,7 @@
 
     move v0, p1
 
-    .line 2414
+    .line 2419
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v2
@@ -9592,18 +9614,18 @@
 
     const-string v0, "setNrUltraWidebandIconConfig: invalid slotId"
 
-    .line 2415
+    .line 2420
     invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-object v4
 
-    .line 2418
+    .line 2423
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v2
 
-    .line 2419
+    .line 2424
     iget-object v5, v1, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2}, Lcom/qti/extphone/Token;->get()I
@@ -9622,7 +9644,7 @@
 
     invoke-virtual {v5, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2421
+    .line 2426
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -9645,7 +9667,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2423
+    .line 2428
     :try_start_0
     iget-object v3, v1, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
@@ -9672,7 +9694,7 @@
     :catch_0
     move-exception v0
 
-    .line 2426
+    .line 2431
     iget-object v1, v1, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2}, Lcom/qti/extphone/Token;->get()I
@@ -9685,7 +9707,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2427
+    .line 2432
     throw v0
 .end method
 
@@ -9697,7 +9719,7 @@
         }
     .end annotation
 
-    .line 1415
+    .line 1420
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9716,7 +9738,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1416
+    .line 1421
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mExtTelephonyServiceImpl:Lcom/qti/phone/ExtTelephonyServiceImpl;
 
     invoke-virtual {v0, p2}, Lcom/qti/phone/ExtTelephonyServiceImpl;->isClientValid(Lcom/qti/extphone/Client;)Z
@@ -9727,13 +9749,13 @@
 
     return-void
 
-    .line 1417
+    .line 1422
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1418
+    .line 1423
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9752,14 +9774,14 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1421
+    .line 1426
     iget-object p2, p0, Lcom/qti/phone/QtiRadioProxy;->mWorkerThreadHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/qti/phone/QtiRadioProxy$Result;
 
     const/4 v2, 0x0
 
-    .line 1422
+    .line 1427
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -9768,7 +9790,7 @@
 
     const/16 p0, 0x11
 
-    .line 1421
+    .line 1426
     invoke-virtual {p2, p0, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -9786,7 +9808,7 @@
         }
     .end annotation
 
-    .line 1322
+    .line 1327
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9805,7 +9827,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1323
+    .line 1328
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9822,13 +9844,13 @@
 
     goto :goto_0
 
-    .line 1326
+    .line 1331
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1327
+    .line 1332
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9847,7 +9869,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1329
+    .line 1334
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9871,7 +9893,7 @@
         }
     .end annotation
 
-    .line 1334
+    .line 1339
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9890,7 +9912,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1335
+    .line 1340
     invoke-direct {p0, p1}, Lcom/qti/phone/QtiRadioProxy;->isSlotIdValid(I)Z
 
     move-result v0
@@ -9907,13 +9929,13 @@
 
     goto :goto_0
 
-    .line 1338
+    .line 1343
     :cond_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->getNextToken()Lcom/qti/extphone/Token;
 
     move-result-object v0
 
-    .line 1339
+    .line 1344
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy;->mInflightRequests:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Lcom/qti/extphone/Token;->get()I
@@ -9932,7 +9954,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1341
+    .line 1346
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mQtiRadio:[Lcom/qti/phone/IQtiRadioConnectionInterface;
 
     aget-object p0, p0, p1
@@ -9951,7 +9973,7 @@
 .method unRegisterInternalCallback(Lcom/qti/phone/QtiRadioProxy$IQtiRadioInternalCallback;)V
     .locals 4
 
-    .line 2236
+    .line 2241
     iget-object v0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     monitor-enter v0
@@ -9959,7 +9981,7 @@
     :try_start_0
     const-string v1, "QtiRadioProxy"
 
-    .line 2237
+    .line 2242
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9976,12 +9998,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2238
+    .line 2243
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy;->mInternalCallbackList:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2239
+    .line 2244
     monitor-exit v0
 
     return-void

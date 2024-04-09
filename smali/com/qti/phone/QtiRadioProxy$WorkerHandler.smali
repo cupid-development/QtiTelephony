@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/qti/phone/QtiRadioProxy;Landroid/os/Looper;)V
     .locals 0
 
-    .line 208
+    .line 213
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
-    .line 209
+    .line 214
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 10
 
-    .line 214
+    .line 219
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -57,7 +57,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
+    .line 220
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v2, 0x26
@@ -68,7 +68,7 @@
 
     const-wide/16 v5, 0x0
 
-    .line 250
+    .line 255
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
@@ -80,18 +80,18 @@
     :pswitch_0
     const-string v0, "EVENT_ON_NR_ICON_TYPE_DELAY"
 
-    .line 259
+    .line 264
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
+    .line 265
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 261
+    .line 266
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 262
+    .line 267
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIconMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -118,7 +118,7 @@
 
     move-result-wide v1
 
-    .line 263
+    .line 268
     iget-object v8, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v8}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIcon(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -151,7 +151,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 264
+    .line 269
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v2, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -164,7 +164,7 @@
 
     invoke-static {v1, v0, v2, v4, v5}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monNrIconType(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/NrIconType;)V
 
-    .line 265
+    .line 270
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIcon(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -187,7 +187,7 @@
 
     invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 271
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIconMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -208,7 +208,7 @@
 
     invoke-virtual {v1, v2, v7}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 267
+    .line 272
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmUpdatedNrIconResult(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -229,7 +229,7 @@
 
     invoke-virtual {v1, v0, p1}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 268
+    .line 273
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmWorkerThreadHandler(Lcom/qti/phone/QtiRadioProxy;)Landroid/os/Handler;
@@ -243,18 +243,18 @@
     :pswitch_1
     const-string v0, "EVENT_ON_BEARER_ALLOCATION_CHANGE_IND_DELAY"
 
-    .line 335
+    .line 340
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 336
+    .line 341
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 337
+    .line 342
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 338
+    .line 343
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAllocMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -281,7 +281,7 @@
 
     move-result-wide v8
 
-    .line 339
+    .line 344
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAlloc(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -314,7 +314,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 340
+    .line 345
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v3, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -327,7 +327,7 @@
 
     invoke-static {v1, v0, v3, v4, v5}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monAnyNrBearerAllocation(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Lcom/qti/extphone/BearerAllocationStatus;)V
 
-    .line 341
+    .line 346
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAlloc(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -350,7 +350,7 @@
 
     invoke-virtual {v1, v3, v4}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 342
+    .line 347
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAllocMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -371,7 +371,7 @@
 
     invoke-virtual {v1, v3, v7}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 343
+    .line 348
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmUpdatedBearerAllocResult(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -392,7 +392,7 @@
 
     invoke-virtual {v1, v0, p1}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 344
+    .line 349
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmWorkerThreadHandler(Lcom/qti/phone/QtiRadioProxy;)Landroid/os/Handler;
@@ -406,18 +406,18 @@
     :pswitch_2
     const-string v0, "EVENT_SIM_PERSO_UNLOCK_STATUS_CHANGE"
 
-    .line 577
+    .line 582
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 578
+    .line 583
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 579
+    .line 584
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 580
+    .line 585
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object p1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
@@ -431,21 +431,21 @@
     :pswitch_3
     const-string v0, "EVENT_ON_QOS_PARAMETERS_CHANGED"
 
-    .line 568
+    .line 573
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 569
+    .line 574
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 570
+    .line 575
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    .line 571
+    .line 576
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 572
+    .line 577
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object p1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
@@ -459,18 +459,18 @@
     :pswitch_4
     const-string v0, "EVENT_GET_QOS_PARAMETERS_RESPONSE"
 
-    .line 559
+    .line 564
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 560
+    .line 565
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 561
+    .line 566
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 562
+    .line 567
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -488,18 +488,18 @@
     :pswitch_5
     const-string v0, "EVENT_GET_NETWORK_SELECTION_MODE_RESPONSE"
 
-    .line 542
+    .line 547
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 543
+    .line 548
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 544
+    .line 549
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 545
+    .line 550
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -517,18 +517,18 @@
     :pswitch_6
     const-string v0, "EVENT_START_NETWORK_SELECTION_MODE_AUTOMATIC_RESPONSE"
 
-    .line 533
+    .line 538
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 534
+    .line 539
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 535
+    .line 540
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 536
+    .line 541
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -537,12 +537,12 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 537
+    .line 542
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 536
+    .line 541
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$msetNetworkSelectionModeAutomaticResponse(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;I)V
 
     goto/16 :goto_1
@@ -550,18 +550,18 @@
     :pswitch_7
     const-string v0, "EVENT_START_NETWORK_SELECTION_MODE_MANUAL_RESPONSE"
 
-    .line 524
+    .line 529
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 525
+    .line 530
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 526
+    .line 531
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 527
+    .line 532
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -570,12 +570,12 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 528
+    .line 533
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 527
+    .line 532
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$msetNetworkSelectionModeManualResponse(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;I)V
 
     goto/16 :goto_1
@@ -583,18 +583,18 @@
     :pswitch_8
     const-string v0, "EVENT_STOP_NETWORK_SCAN_RESPONSE"
 
-    .line 516
+    .line 521
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 517
+    .line 522
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 518
+    .line 523
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 519
+    .line 524
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -614,18 +614,18 @@
     :pswitch_9
     const-string v0, "EVENT_NETWORK_SCAN_RESULT"
 
-    .line 551
+    .line 556
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 552
+    .line 557
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 553
+    .line 558
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 554
+    .line 559
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -641,18 +641,18 @@
     :pswitch_a
     const-string v0, "EVENT_START_NETWORK_SCAN_RESPONSE"
 
-    .line 508
+    .line 513
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 509
+    .line 514
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 510
+    .line 515
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 511
+    .line 516
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -672,15 +672,15 @@
     :pswitch_b
     const-string v0, "EVENT_ON_SET_NR_ULTRA_WIDEBAND_CONFIG_RESPONSE"
 
-    .line 501
+    .line 506
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 502
+    .line 507
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 503
+    .line 508
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget p1, p1, Landroid/os/Message;->arg1:I
@@ -694,15 +694,15 @@
     :pswitch_c
     const-string v0, "EVENT_ON_MCFG_REFRESH"
 
-    .line 494
+    .line 499
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 495
+    .line 500
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 496
+    .line 501
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v0, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -715,16 +715,16 @@
 
     goto/16 :goto_1
 
-    .line 486
+    .line 491
     :pswitch_d
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 487
+    .line 492
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 488
+    .line 493
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -733,26 +733,26 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    .line 489
+    .line 494
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    .line 488
+    .line 493
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monEpdgOverCellularDataSupported(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Z)V
 
     goto/16 :goto_1
 
-    .line 478
+    .line 483
     :pswitch_e
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 479
+    .line 484
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 480
+    .line 485
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -761,26 +761,26 @@
 
     check-cast p1, Ljava/lang/Long;
 
-    .line 481
+    .line 486
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v2
 
-    .line 480
+    .line 485
     invoke-static {p0, v0, v1, v2, v3}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monDataDeactivateDelayTime(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;J)V
 
     goto/16 :goto_1
 
-    .line 470
+    .line 475
     :pswitch_f
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 471
+    .line 476
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 472
+    .line 477
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -789,26 +789,26 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 473
+    .line 478
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 472
+    .line 477
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monDdsSwitchRecommendation(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;I)V
 
     goto/16 :goto_1
 
-    .line 462
+    .line 467
     :pswitch_10
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 463
+    .line 468
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 464
+    .line 469
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -817,26 +817,26 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    .line 465
+    .line 470
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    .line 464
+    .line 469
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monDdsSwitchCriteriaChange(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Z)V
 
     goto/16 :goto_1
 
-    .line 454
+    .line 459
     :pswitch_11
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 455
+    .line 460
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 456
+    .line 461
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -847,26 +847,26 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    .line 457
+    .line 462
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    .line 456
+    .line 461
     invoke-static {p0, v0, v1, v2, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$monDdsSwitchCapabilityChange(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;Z)V
 
     goto/16 :goto_1
 
-    .line 446
+    .line 451
     :pswitch_12
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 447
+    .line 452
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 448
+    .line 453
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -880,18 +880,18 @@
     :pswitch_13
     const-string v0, "EVENT_IMEI_CHANGE_IND_INFO"
 
-    .line 438
+    .line 443
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 439
+    .line 444
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 440
+    .line 445
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 441
+    .line 446
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object p1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
@@ -905,18 +905,18 @@
     :pswitch_14
     const-string v0, "EVENT_GET_IMEI_RESPONSE"
 
-    .line 429
+    .line 434
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 430
+    .line 435
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 431
+    .line 436
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 432
+    .line 437
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -934,28 +934,28 @@
     :pswitch_15
     const-string v0, "EVENT_ON_SMART_DDS_SWITCH_TOGGLE_RESPONSE"
 
-    .line 231
+    .line 236
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
+    .line 237
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/qti/extphone/Token;
 
-    .line 233
+    .line 238
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 234
+    .line 239
     iget p1, p1, Landroid/os/Message;->arg2:I
 
-    .line 235
+    .line 240
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0, v0, v1, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$msetSmartDdsSwitchToggleResponse(Lcom/qti/phone/QtiRadioProxy;Lcom/qti/extphone/Token;II)V
 
     goto/16 :goto_1
 
-    .line 217
+    .line 222
     :pswitch_16
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -979,15 +979,15 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
+    .line 224
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 220
+    .line 225
     iget-object v0, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
 
-    .line 221
+    .line 226
     iget-object p1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mData:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
@@ -1003,7 +1003,7 @@
     :cond_0
     const/4 v4, 0x0
 
-    .line 222
+    .line 227
     :goto_0
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
@@ -1013,14 +1013,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 223
+    .line 228
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0, v0, v4}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$msetAidlDynamicSubscriptionChange(Lcom/qti/phone/QtiRadioProxy;Lcom/qti/extphone/Token;Z)V
 
     goto/16 :goto_1
 
-    .line 225
+    .line 230
     :cond_1
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
@@ -1031,15 +1031,15 @@
     :pswitch_17
     const-string v0, "EVENT_FACILITY_LOCK_RESPONSE"
 
-    .line 422
+    .line 427
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 423
+    .line 428
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 424
+    .line 429
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v0, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1057,15 +1057,15 @@
     :pswitch_18
     const-string v0, "EVENT_CALL_FORWARD_QUERY_RESPONSE"
 
-    .line 414
+    .line 419
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 415
+    .line 420
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 416
+    .line 421
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v0, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1083,18 +1083,18 @@
     :pswitch_19
     const-string v0, "EVENT_SEND_CARRIER_INFO_RESPONSE"
 
-    .line 405
+    .line 410
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 411
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 407
+    .line 412
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 408
+    .line 413
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1112,18 +1112,18 @@
     :pswitch_1a
     const-string v0, "EVENT_SEND_CDMA_SMS_RESPONSE"
 
-    .line 396
+    .line 401
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 397
+    .line 402
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 398
+    .line 403
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 399
+    .line 404
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1141,18 +1141,18 @@
     :pswitch_1b
     const-string v0, "EVENT_QTI_RADIO_CAPABILITY_RESPONSE"
 
-    .line 387
+    .line 392
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 388
+    .line 393
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 389
+    .line 394
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 390
+    .line 395
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1163,12 +1163,12 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 391
+    .line 396
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 390
+    .line 395
     invoke-static {p0, v0, v1, v2, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$mgetQtiRadioCapabilityResponse(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/extphone/Token;Lcom/qti/extphone/Status;I)V
 
     goto/16 :goto_1
@@ -1176,18 +1176,18 @@
     :pswitch_1c
     const-string v0, "EVENT_ON_SIGNAL_STRENGTH"
 
-    .line 378
+    .line 383
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
+    .line 384
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 380
+    .line 385
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 381
+    .line 386
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1205,18 +1205,18 @@
     :pswitch_1d
     const-string v0, "EVENT_ON_5G_CONFIG_INFO"
 
-    .line 369
+    .line 374
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 370
+    .line 375
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 371
+    .line 376
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 372
+    .line 377
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1234,18 +1234,18 @@
     :pswitch_1e
     const-string v0, "EVENT_ON_UPPER_LAYER_IND_INFO"
 
-    .line 360
+    .line 365
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
+    .line 366
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 362
+    .line 367
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 363
+    .line 368
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1263,18 +1263,18 @@
     :pswitch_1f
     const-string v0, "EVENT_ON_NR_DC_PARAM"
 
-    .line 351
+    .line 356
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 352
+    .line 357
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 353
+    .line 358
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 354
+    .line 359
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1292,18 +1292,18 @@
     :pswitch_20
     const-string v0, "EVENT_ON_5G_ENABLE_STATUS"
 
-    .line 308
+    .line 313
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 309
+    .line 314
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 310
+    .line 315
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 311
+    .line 316
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1325,28 +1325,28 @@
     :pswitch_21
     const-string v0, "EVENT_ON_BEARER_ALLOCATION_CHANGE_IND"
 
-    .line 316
+    .line 321
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
+    .line 322
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 318
+    .line 323
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 320
+    .line 325
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
     move-result v1
 
-    .line 321
+    .line 326
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSlotIndex(I)I
 
     move-result v1
 
-    .line 322
+    .line 327
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v3, v0, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$mdelayNotifyBearerAllocation(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/phone/QtiRadioProxy$Result;)Z
@@ -1355,7 +1355,7 @@
 
     if-nez v3, :cond_2
 
-    .line 323
+    .line 328
     iget-object v3, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v4, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1370,7 +1370,7 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 325
+    .line 330
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAlloc(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1393,7 +1393,7 @@
 
     invoke-virtual {v1, v3, v4}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 326
+    .line 331
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyBearerAllocMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1414,7 +1414,7 @@
 
     invoke-virtual {v1, v3, v7}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 327
+    .line 332
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmUpdatedBearerAllocResult(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1435,7 +1435,7 @@
 
     invoke-virtual {v1, v0, p1}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 328
+    .line 333
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmWorkerThreadHandler(Lcom/qti/phone/QtiRadioProxy;)Landroid/os/Handler;
@@ -1449,18 +1449,18 @@
     :pswitch_22
     const-string v0, "EVENT_ON_NR_CONFIG_STATUS"
 
-    .line 299
+    .line 304
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 300
+    .line 305
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 301
+    .line 306
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 302
+    .line 307
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1478,18 +1478,18 @@
     :pswitch_23
     const-string v0, "EVENT_ON_SET_NR_CONFIG"
 
-    .line 291
+    .line 296
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
+    .line 297
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 293
+    .line 298
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 294
+    .line 299
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1503,18 +1503,18 @@
     :pswitch_24
     const-string v0, "EVENT_ON_ENDC_STATUS"
 
-    .line 283
+    .line 288
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
+    .line 289
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 285
+    .line 290
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 286
+    .line 291
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1536,18 +1536,18 @@
     :pswitch_25
     const-string v0, "EVENT_ON_ENABLE_ENDC"
 
-    .line 275
+    .line 280
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
+    .line 281
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 277
+    .line 282
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 278
+    .line 283
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v1, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1561,28 +1561,28 @@
     :pswitch_26
     const-string v0, "EVENT_ON_NR_ICON_TYPE"
 
-    .line 240
+    .line 245
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 241
+    .line 246
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 242
+    .line 247
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/qti/phone/QtiRadioProxy$Result;
 
-    .line 244
+    .line 249
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
 
     move-result v1
 
-    .line 245
+    .line 250
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSlotIndex(I)I
 
     move-result v1
 
-    .line 246
+    .line 251
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v2, v0, p1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$mdelayNotifyNrIcon(Lcom/qti/phone/QtiRadioProxy;ILcom/qti/phone/QtiRadioProxy$Result;)Z
@@ -1591,7 +1591,7 @@
 
     if-nez v2, :cond_2
 
-    .line 247
+    .line 252
     iget-object v2, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     iget-object v4, p1, Lcom/qti/phone/QtiRadioProxy$Result;->mToken:Lcom/qti/extphone/Token;
@@ -1606,7 +1606,7 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 249
+    .line 254
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIcon(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1629,7 +1629,7 @@
 
     invoke-virtual {v1, v2, v4}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 250
+    .line 255
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmDelayingNotifyNrIconMs(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1650,7 +1650,7 @@
 
     invoke-virtual {v1, v2, v7}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 251
+    .line 256
     iget-object v1, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {v1}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmUpdatedNrIconResult(Lcom/qti/phone/QtiRadioProxy;)Ljava/util/HashMap;
@@ -1671,7 +1671,7 @@
 
     invoke-virtual {v1, v0, p1}, Ljava/util/HashMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 252
+    .line 257
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$WorkerHandler;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fgetmWorkerThreadHandler(Lcom/qti/phone/QtiRadioProxy;)Landroid/os/Handler;

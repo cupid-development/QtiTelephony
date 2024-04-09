@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android SignApk)
-SHA-256-Digest-Manifest: MDI9PSmUzDsmohBtWOFCdIhKL9m+XDj3D3x+ADuO3D8=
+SHA-256-Digest-Manifest: +LvHS2/vXOQvRB9kCstC9W8fKm4DMieFmjOwj5tzqY8=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
@@ -205,7 +205,7 @@ Name: META-INF/services/kotlinx.coroutines.internal.MainDispatcherFact
 SHA-256-Digest: CvpiKzNhVHqONkAL//lJVL9QOZGQGXeAZRDX9l7tM4E=
 
 Name: classes.dex
-SHA-256-Digest: W7+7OOrqd7OXt097vig6/uqtE7MVw7/8/w/jI8fsM9A=
+SHA-256-Digest: Eheir7amuG3PVvFDsaDF7kpzVVPcdDcgJ1TfpgAPKG8=
 
 Name: kotlin/annotation/annotation.kotlin_builtins
 SHA-256-Digest: 2kZfon1lRo0UGgaGv88sZi7sEP+awuzOStpYx9cLGdc=
@@ -1453,5 +1453,5 @@ Name: res/layout/support_simple_spinner_dropdown_item.xml
 SHA-256-Digest: taBAFLlIE93N+n7ziJOj9K8z1U4elRklY+gY8jgfwZw=
 
 Name: resources.arsc
-SHA-256-Digest: vaxBjvGcKoqcLuSHRVuf/8i4JOFRpOdRRvPZHFogTZQ=
+SHA-256-Digest: Ume6dntNKTNnUjEe2b6LHlku3On3roY/tNG5F8KTwpY=
 

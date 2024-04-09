@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/qti/phone/QtiRadioProxy;)V
     .locals 0
 
-    .line 1488
+    .line 1493
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy$3;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
 
     const-string p2, "QtiRadioProxy"
 
-    .line 1491
+    .line 1496
     invoke-static {p2, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1492
+    .line 1497
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$sfgetsDynamicSubscriptionManager()Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1494
+    .line 1499
     :try_start_0
     invoke-static {}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$sfgetsDynamicSubscriptionManager()Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;
 
@@ -75,10 +75,10 @@
 
     const-string v0, "Failed to unlink the death recipient"
 
-    .line 1496
+    .line 1501
     invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1499
+    .line 1504
     :cond_0
     :goto_0
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$3;->this$0:Lcom/qti/phone/QtiRadioProxy;
@@ -89,7 +89,7 @@
 
     const/4 p0, 0x0
 
-    .line 1500
+    .line 1505
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$sfputsDynamicSubscriptionManager(Lvendor/qti/hardware/data/dynamicdds/V1_0/ISubscriptionManager;)V
 
     return-void

@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/qti/phone/QtiRadioProxy;)V
     .locals 0
 
-    .line 1516
+    .line 1521
     iput-object p1, p0, Lcom/qti/phone/QtiRadioProxy$ServiceNotification;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-direct {p0}, Landroid/hidl/manager/V1_0/IServiceNotification$Stub;-><init>()V
@@ -44,7 +44,7 @@
 .method public onRegistration(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 1
 
-    .line 1519
+    .line 1524
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -71,7 +71,7 @@
 
     const-string p1, "default"
 
-    .line 1520
+    .line 1525
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -80,12 +80,12 @@
 
     const-string p0, "onRegistration: Ignoring."
 
-    .line 1521
+    .line 1526
     invoke-static {p3, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    .line 1524
+    .line 1529
     :cond_0
     iget-object p1, p0, Lcom/qti/phone/QtiRadioProxy$ServiceNotification;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
@@ -93,7 +93,7 @@
 
     invoke-static {p1, p2}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$fputmCneDataFactoryAvailable(Lcom/qti/phone/QtiRadioProxy;Z)V
 
-    .line 1525
+    .line 1530
     iget-object p0, p0, Lcom/qti/phone/QtiRadioProxy$ServiceNotification;->this$0:Lcom/qti/phone/QtiRadioProxy;
 
     invoke-static {p0}, Lcom/qti/phone/QtiRadioProxy;->-$$Nest$mcallDynamicDdsSwitchOnDemand(Lcom/qti/phone/QtiRadioProxy;)V
