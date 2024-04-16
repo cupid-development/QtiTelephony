@@ -1451,5 +1451,5 @@ Name: res/layout/support_simple_spinner_dropdown_item.xml
 SHA-256-Digest: FUCbvfFDfWrchep5sGLYoS9YAV11OED/+/mxCcy8qus=
 
 Name: resources.arsc
-SHA-256-Digest: aNDfpnFNBshQk5GlX0kysFJjz8WIb+DHsjD6rqkjrqE=
+SHA-256-Digest: e9hc87TOp6w+nCZgGbJb7LcttEFIrtVMqfszc9mJjlA=
 
